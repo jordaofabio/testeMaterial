@@ -12,12 +12,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    SidenavComponent
+    SidenavComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
