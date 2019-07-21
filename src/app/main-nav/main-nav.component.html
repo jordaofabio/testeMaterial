@@ -5,14 +5,13 @@
       [opened]="true">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <ul>
-      <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-        <a class="nav-link" [routerLink]="[menuItem.path]">
-            <i class="material-icons">{{menuItem.icon}}</i>
-            <p>{{menuItem.title}}</p>
-        </a>
-      </li>
-    </ul>
+      <a mat-list-item *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.path]">
+        <mat-icon matListIcon>{{menuItem.icon}}</mat-icon>
+        <span matLine>
+            {{menuItem.title}}
+        </span>
+      </a>
+     
     </mat-nav-list>
   </mat-sidenav>
 
