@@ -1,37 +1,44 @@
-   <mat-card>
+   <mat-card color="primary">
     <mat-card-header color="primary">
       <h4 class="card-title ">Usuários do sistema</h4>
 
     </mat-card-header>
       <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
    
-   <mat-list>
-        <h3 matSubheader>This is the listview</h3>
-        <a mat-list-item [routerLink]="['/detail']">
-          <span matLine>Title</span>
-          <button mat-icon-button (click)="onAdd($event)">
-              <mat-icon>add</mat-icon>
-          </button>
-          <button mat-icon-button (click)="onRemove($event)">
-              <mat-icon>delete</mat-icon>
-          </button>
-        </a>
-      </mat-list>
-      <table matSort (matSortChange)="sortData($event)">
-        <tr>
-          <th mat-sort-header="name">Dessert (100g)</th>
-          <th mat-sort-header="calories">Calories</th>
-          <th mat-sort-header="fat">Fat (g)</th>
-          <th mat-sort-header="carbs">Carbs (g)</th>
-          <th mat-sort-header="protein">Protein (g)</th>
-        </tr>
-      
-        <tr *ngFor="let dessert of sortedData">
-          <td>{{dessert.name}}</td>
-          <td>{{dessert.calories}}</td>
-          <td>{{dessert.fat}}</td>
-          <td>{{dessert.carbs}}</td>
-          <td>{{dessert.protein}}</td>
-        </tr>
+   <div class="divPlus">
+      <button mat-icon-button [routerLink]="['/new-user']">
+        <mat-icon>add</mat-icon>
+    </button>
+   </div>
+     
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nome </th>
+              <td mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> E-mail </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="phone">
+              <th mat-header-cell *matHeaderCellDef> Telefone </th>
+              <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="level">
+              <th mat-header-cell *matHeaderCellDef> Nivel de acesso </th>
+              <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="enabled">
+              <th mat-header-cell *matHeaderCellDef> Ativo </th>
+              <td mat-cell *matCellDef="let element"> {{element.enabled}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
         </table>
+
       </mat-card>

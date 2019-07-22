@@ -5,3 +5,30 @@ body {
     padding: 0;
     height: 100%;
 }
+.mat-card {
+    &-header {
+        font-weight: 100 !important;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.24);
+        background: #3f51b5;
+        color: #FFF;
+        margin-bottom: 0.6em;
+        &-text {
+            padding-top:0.6em; 
+        }
+    }
+  }
+
+.mat-list {
+    &-icon {
+        width: 6px;
+        height: 6px;
+        font-size: 6px;
+    }
+    &-text {
+        font-size: 14px;
+    }
+}
+
+table th, h4 {
+    font-weight: 500;
+}

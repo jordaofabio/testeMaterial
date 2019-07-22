@@ -10,14 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { PageTemplateComponent } from './page-template/page-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
     MainNavComponent,
     PageTemplateComponent
   ],
